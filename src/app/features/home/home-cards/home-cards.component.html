@@ -1,0 +1,15 @@
+<div class="details_content">
+
+  <div class="title-font">Opções</div>
+  <div class="row">
+    <!--  Professores  -->
+    <div class="col-4 top-space" (click)="btnClickCard(['professores'])" *ngIf="this.canShowProfessor()">
+      <app-cards [content]="'Veja todos os professores'" [title]="'Professores detalhes'"></app-cards>
+    </div>
+
+    <!--  Estudantes  -->
+    <div class="col-4 top-space" (click)="btnClickCard(['alunos'])" *ngIf="this.canShowAluno()">
+      <app-cards [content]="'Veja todos os Estudantes'" [title]="'Estudantes detalhes'"></app-cards>
+    </div>
+  </div>
+</div>

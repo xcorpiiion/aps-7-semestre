@@ -1,0 +1,40 @@
+<div class="wrapper h-100 d-flex justify-content-center">
+  <div id="formContent">
+
+    <!--   Login text   -->
+    <div class="top-space bottom-space">
+      <h1>Login</h1>
+    </div>
+
+
+    <!-- Login Form -->
+    <form [formGroup]="this.loginForm" class="row w-100 justify-content-center" (ngSubmit)="this.login()">
+      <div class="col-10">
+
+        <!--   Email   -->
+        <input class="form-control fadeIn second mt-3"
+               [ngClass]="!this.loginForm.get('email').errors ? 'is-valid' : 'is-invalid'" formControlName="email"
+               type="email" id="exampleInputEmail1"
+               name="email" placeholder="email">
+      </div>
+
+      <!--   Password   -->
+      <div class="col-10 bottom-space">
+        <input class="form-control fadeIn third mt-3"
+               [ngClass]="!this.loginForm.get('password').errors ? 'is-valid' : 'is-invalid'" formControlName="password"
+               type="password"
+               id="exampleInputPassword1"
+               name="password" placeholder="password">
+      </div>
+
+      <!--   Buttons   -->
+      <div class="row col-12 top-space bottom-space justify-content-center">
+
+        <!--   Login   -->
+        <button class="btn btn-outline-primary fadeIn fourth col-5 left-space" type="submit">
+          <label class="button-text">Log In</label></button>
+      </div>
+    </form>
+
+  </div>
+</div>

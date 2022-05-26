@@ -1,0 +1,16 @@
+<form class="row" [formGroup]="this.form">
+  <mat-form-field [appearance]="this.apparence">
+    <mat-label>{{this.label}}</mat-label>
+    <input [type]="!this.isPasswordField ? this.type : (hide ? 'password' : 'text')" [required]="this.isRequired"
+           matInput [formControlName]="this.controlName"
+           [placeholder]="this.placeholder">
+    <mat-icon *ngIf="this.iconName && !this.isPasswordField" matSuffix>{{this.iconName}}</mat-icon>
+    <button class="border-0 bg-white" *ngIf="this.isPasswordField" mat-icon-button matSuffix (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon matSuffix>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+    <mat-error *ngIf="this.errorFieldsFocusService.isInvalid(this.form, this.controlName)">
+      {{this.errorFieldsFocusService.getErrorMessege(this.form, this.controlName, this.errorMessage)}}
+    </mat-error>
+  </mat-form-field>
+</form>

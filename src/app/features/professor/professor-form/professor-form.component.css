@@ -1,0 +1,16 @@
+.preco-field {
+  text-align: right;
+}
+
+input.preco-field::-webkit-outer-spin-button,
+input.preco-field::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.preco-field {
+  -moz-appearance: textfield;
+}
+
+.page-content {
+
+}

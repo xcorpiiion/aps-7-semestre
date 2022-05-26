@@ -1,0 +1,136 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.top-space {
+  margin-top: 30px !important;
+}
+
+.left-space {
+  margin-left: 30px !important;
+}
+
+.bottom-space {
+  margin-bottom: 30px !important;
+}
+
+.right-space {
+  margin-right: 30px !important;
+}
+
+.title-font {
+  font-family: Arial, serif;
+  font-size: 36px;
+}
+
+.subtitle-font {
+  font-family: Arial, serif;
+  font-size: 28px;
+}
+
+.list-title-font {
+  font-family: Arial, serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+}
+
+.button-text {
+  font-family: Arial, serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #2c79f8;
+}
+
+.list-title-font:hover {
+  color: gray;
+}
+
+.list-value-font {
+  font-family: Arial, serif;
+  font-size: 18px;
+  color: black;
+}
+
+.details_content {
+  width: calc(100% - 60px);
+  min-width: 500px;
+  background-color: white;
+  position: relative;
+  padding: 30px 30px 22px 30px;
+  min-height: calc(100vh - 168px);
+  margin-left: 30px;
+  margin-top: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-start-start-radius: 20px;
+  border-start-end-radius: 20px;
+  box-shadow: 3px 3px rgba(75, 75, 75, 0.12), 1em 0 0.4em rgba(112, 112, 112, 0.46);
+}
+
+.details_content_signin {
+  width: calc(60% - 60px);
+  background-color: white;
+  position: relative;
+  padding: 30px 30px 22px 30px;
+  min-height: calc(100vh - 168px);
+  margin-top: 30px;
+  margin-left: 20%;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-start-start-radius: 20px;
+  border-start-end-radius: 20px;
+  box-shadow: 3px 3px rgba(75, 75, 75, 0.12), 1em 0 0.4em rgba(112, 112, 112, 0.46);
+}
+
+.details_content_view {
+  display: flex;
+  justify-content: center;
+  width: calc(60% - 60px);
+  background-color: rgb(246, 246, 246);
+  position: relative;
+  padding: 30px 30px 22px 30px;
+  min-height: calc(100vh - 168px);
+  min-width: 500px;
+  margin-left: 20%;
+  margin-top: 30px;
+  border: 1.5px solid rgba(0, 0, 0, 0.05);
+  border-start-start-radius: 20px;
+  border-start-end-radius: 20px;
+  box-shadow: 3px 3px rgba(75, 75, 75, 0.12), 1em 0 0.4em rgba(112, 112, 112, 0.46);
+}
+
+.text-sort-decoration {
+  text-decoration: underline;
+}
+
+.card-list {
+  max-width: 400px;
+  border: solid 1px #000000;
+  transition: transform 250ms;
+  box-shadow: 3px 3px #0148fd, 1em 0 0.4em #9d9d9d;
+}
+
+.card-list:hover {
+  transform: translateY(-10px);
+  box-shadow: 3px 3px #002b91, 1em 0 0.4em rgba(0, 118, 255, 0.65);
+  background-color: rgba(255, 255, 255, 0.56);
+}
+
+.imagem-card {
+  border: solid 3px #000000;
+}
+
+.imagem-card:hover {
+  border: solid 3px #00a5fd;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: rgb(63 81 181);
+}
+

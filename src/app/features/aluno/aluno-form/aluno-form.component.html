@@ -1,0 +1,93 @@
+<div class="details_content_signin">
+
+  <!--Title-->
+  <div class="title-font top-space bottom-space d-flex justify-content-center">
+    <h1>Cadastro de alunos</h1>
+  </div>
+
+  <form [formGroup]="form" class="form-group">
+
+    <!--  Linha 01  -->
+    <div class="row justify-content-center">
+      <!--  Nome  -->
+      <mat-form-field class="col-6 page-content" [appearance]="'outline'">
+        <mat-label>Nome</mat-label>
+        <input type="text" [required]="true" matInput [formControlName]="'nome'"
+               placeholder="Informe um nome.">
+        <mat-error *ngIf="this.errorFieldsFocusService.isInvalid(form, 'nome')">
+          {{this.errorFieldsFocusService.getErrorMessege(form, 'nome', 'Campo obrigatorio.')}}
+        </mat-error>
+      </mat-form-field>
+
+      <!--  RA  -->
+      <mat-form-field class="col-6 page-content" [appearance]="'outline'" [floatLabel]="'always'">
+        <mat-label>RA</mat-label>
+        <input matInput type="text" [formControlName]="'ra'" [required]="true" placeholder="RA" [maxlength]="8">
+        <mat-error *ngIf="this.errorFieldsFocusService.isInvalid(form, 'ra')">
+          {{this.errorFieldsFocusService.getErrorMessege(form, 'ra', 'Campo obrigatorio.')}}
+        </mat-error>
+      </mat-form-field>
+
+      <!--  Email  -->
+      <mat-form-field class="col-6 page-content" [appearance]="'outline'" [floatLabel]="'always'">
+        <mat-label>Email</mat-label>
+        <input matInput type="text" [formControlName]="'email'" [required]="true" placeholder="Email" [maxlength]="80">
+        <mat-error *ngIf="this.errorFieldsFocusService.isInvalid(form, 'email')">
+          {{this.errorFieldsFocusService.getErrorMessege(form, 'email', 'Campo obrigatorio.')}}
+        </mat-error>
+      </mat-form-field>
+
+      <!--  Senha  -->
+      <mat-form-field class="col-6 page-content" [appearance]="'outline'" [floatLabel]="'always'"
+                      *ngIf="tipoConta === 'GERENTE'">
+        <mat-label>Senha</mat-label>
+        <input matInput type="text" [formControlName]="'senha'" [required]="true" placeholder="Senha" [maxlength]="80">
+        <mat-error *ngIf="this.errorFieldsFocusService.isInvalid(form, 'senha')">
+          {{this.errorFieldsFocusService.getErrorMessege(form, 'senha', 'Campo obrigatorio.')}}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="col-12 page-content" appearance="outline">
+        <mat-label>Materias</mat-label>
+        <mat-chip-list #chipList aria-label="Selecione uma materia">
+          <mat-chip *ngFor="let materia of materias" (removed)="remove(materia)">
+            {{materia}}
+            <button matChipRemove>
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-chip>
+          <input placeholder="Nova materia.."
+                 [matChipInputFor]="chipList"
+                 [disabled]="tipoConta !== 'GERENTE'"
+                 [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                 [matChipInputAddOnBlur]="addOnBlur"
+                 (matChipInputTokenEnd)="add($event)">
+        </mat-chip-list>
+      </mat-form-field>
+    </div>
+
+    <!--  Linha 04  -->
+    <div class="row justify-content-center">
+      <div class="col-8">
+        <div class="row justify-content-start">
+        </div>
+      </div>
+    </div>
+
+    <!--  Linha 04  -->
+    <div class="d-flex top-space justify-content-center">
+      <div class="right-space">
+        <button type="button" class="btn btn-lg btn-success px-5" (click)="this.btnCadastrar()">Salvar
+        </button>
+      </div>
+      <div class="right-space">
+        <button type="button" class="btn btn-lg btn-primary px-5" (click)="this.btnToCategoria()">Cancelar</button>
+      </div>
+      <div class="">
+        <button type="button" class="btn btn-lg btn-danger px-5" (click)="this.btnExcluir()"
+                *ngIf="tipoConta === 'GERENTE'">Excluir
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

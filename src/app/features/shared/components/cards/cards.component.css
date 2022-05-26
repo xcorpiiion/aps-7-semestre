@@ -1,0 +1,15 @@
+.card-button {
+  border: solid black;
+  cursor: auto;
+  transition: transform 250ms;
+}
+
+.card-button:hover {
+  border: solid blue;
+  cursor: pointer;
+  transform: translateY(-10px);
+}
+
+.example-card {
+  max-width: 400px;
+}

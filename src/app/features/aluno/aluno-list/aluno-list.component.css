@@ -1,0 +1,11 @@
+.table-border {
+  border: solid black;
+}
+
+table {
+  width: 100%;
+}
+
+.mouse-cursor {
+  cursor: pointer;
+}
